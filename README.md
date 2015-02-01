@@ -21,6 +21,4 @@ gulp serve
 Mock Customer Data
 ------------------
 
-### Mock Customer Data
-
 Example mock customer data can be found in `customer.json`.  In the dev environment this data is added to the handlebars context with the `gulp-compile-handlebars` plugin.
