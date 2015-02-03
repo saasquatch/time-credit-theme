@@ -2,6 +2,7 @@
 body {
   background: transparent;
   font-family: 'Lato', sans;
+  padding: 10px;
 }
 
 // Bootstrap overrides
@@ -14,8 +15,11 @@ body {
   }
 }
 
-.input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
-  margin-left: 0;
+.input-group-btn:last-child  {
+  > .btn,
+  > .btn-group {
+    margin-left: 0;
+  }
 }
 
 html.no-flash {
@@ -42,7 +46,7 @@ html.lt-ie9 .fade {
   }
 }
 
-// General Referral SaaSquatch elements
+// Base Referral SaaSquatch elements
 .squatch-container {
   .box-shadow(0 2px 4px rgba(0,0,0,.5));
   padding: 0;
@@ -59,11 +63,15 @@ html.lt-ie9 .fade {
 
 .squatch-body {
   padding: @body-padding;
-  position: relative;
+}
+
+.squatch-title,
+.squatch-lead,
+.squatch-cta {
+  text-align: center;
 }
 
 .squatch-title {
-  text-align: center;
   margin: 0 0 20px;
   color: @blue;
 }
@@ -82,21 +90,18 @@ html.lt-ie9 .fade {
   }
 }
 
-.squatch-lead,
 .squatch-cta {
-  text-align: center;
-}
-
-.squatch-cta {
-  color: @gray-darker;
   margin: 0 0 24px;
+
+  b {
+    color: @gray-darker;
+  }
 }
 
 #squatch-share-link {
   color: @text-color;
   background: transparent;
   cursor: text;
-  position: relative;
 }
 
 #squatch-share-notification {
@@ -132,7 +137,6 @@ html.lt-ie9 .fade {
 
   .squatch-stats-body-actions {
     text-align: center;
-    margin-bottom: 5px;
 
     .btn {
       margin-left: @grid-gutter-width;
@@ -204,13 +208,9 @@ html.lt-ie9 .fade {
   }
 }
 
-.squatch-actions-btn {
-  font-size: @font-size-base;
-}
-
 .squatch-attribution {
   text-align: center;
-  margin: 10px 0;
+  margin: 9px 0;
   font-size: 9px;
   color: lighten(@gray-light, 8%);
 }
@@ -219,10 +219,6 @@ html.lt-ie9 .fade {
   margin: 10px 0 11px;
   height: 209px;
   overflow: hidden;
-
-  html.ie & {
-    margin-bottom: 7px;
-  }
 }
 
 .squatch-referrals {
@@ -329,7 +325,7 @@ html.lt-ie9 .fade {
 }
 
 .btn[data-clipboard-target] {
-  width: 143px;
+  width: 140px;
 
   &.hover {
     background: darken(@btn-primary-bg, 10%);

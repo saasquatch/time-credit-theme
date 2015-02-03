@@ -20,10 +20,7 @@
     <![endif]-->
 
     <script>
-      if(Function('/*@cc_on return document.documentMode===10.0@*/')() || !!navigator.userAgent.match(/Trident.*rv[ :]*11\./)){
-        document.documentElement.className = 'ie';
-      }
-
+      // Detect if client supports flash and if so remove the `no-flash` class from the html element
       (function() {
         var hasFlash = false;
         try {
@@ -38,6 +35,7 @@
             hasFlash = true;
           }
         }
+
         if (hasFlash) {
           html = document.getElementsByTagName('html')[0];
           html.className = html.className.replace('no-flash', '');
@@ -91,26 +89,24 @@
 
       <div class="squatch-stats" id="squatch-stats-panel">
         <div class="squatch-stats-body">
-          <div class="squatch-stats-summary">
-            <h2 class="squatch-stats-title">
-              Referral Stats
-            </h2>
+          <h2 class="squatch-stats-title">
+            Referral Stats
+          </h2>
 
-            <div class="row squatch-rewards">
-              <div class="col-xs-4 text-center">
-                <div class="squatch-rewards-total-credit">$29.95</div>
-                <span class="squatch-rewards-description">Regular Price</span>
-              </div>
+          <div class="row squatch-rewards">
+            <div class="col-xs-4 text-center">
+              <div class="squatch-rewards-total-credit">$29.95</div>
+              <span class="squatch-rewards-description">Regular Price</span>
+            </div>
 
-              <div class="col-xs-4 text-center">
-                <div class="squatch-rewards-credit-available">{{rewardBalances.[0].count}} Months</div>
-                <span class="squatch-rewards-description">Free Service</span>
-              </div>
+            <div class="col-xs-4 text-center">
+              <div class="squatch-rewards-credit-available">{{rewardBalances.[0].count}} Months</div>
+              <span class="squatch-rewards-description">Free Service</span>
+            </div>
 
-              <div class="col-xs-4 text-center">
-                <div class="squatch-rewards-referred">{{referralsLength}}</div>
-                <span class="squatch-rewards-description">Friends Referred</span>
-              </div>
+            <div class="col-xs-4 text-center">
+              <div class="squatch-rewards-referred">{{referralsLength}}</div>
+              <span class="squatch-rewards-description">Friends Referred</span>
             </div>
           </div>
 
@@ -128,10 +124,23 @@
 
                       <div class="squatch-referrals-heading">{{referredUser.firstName}}</div>
 
-                      <div class="squatch-referrals-description">{{#if paid}}Subscriber{{else}}Trial User{{/if}}</div>
+                      <div class="squatch-referrals-description">
+                        {{#if paid}}
+                          Paid User
+                        {{else}}
+                          Trial User
+                        {{/if}}
+                      </div>
                     </td>
                     <td>
-                      <div class="squatch-referrals-heading">Signed Up</div>
+                      <div class="squatch-referrals-heading">
+                        {{#if paid}}
+                          Signed Up
+                        {{else}}
+                          Referred
+                        {{/if}}
+                      </div>
+
                       <div class="squatch-referrals-description" data-moment="true">{{dateReferred}}</div>
                     </td>
                     <td>
@@ -194,7 +203,7 @@
       </div>
 
       <div class="squatch-actions">
-        <button class="btn btn-default squatch-actions-btn {{#unless referrals}}disabled{{/unless}}" data-open-panel="#squatch-stats-panel">
+        <button class="btn btn-default {{#unless referrals}}disabled{{/unless}}" data-open-panel="#squatch-stats-panel">
           {{#if referrals}}
             Show Referrals
           {{else}}
