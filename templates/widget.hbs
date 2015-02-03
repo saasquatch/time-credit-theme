@@ -54,25 +54,30 @@
         <button class="close squatch-header-close">Close</button>
 
         <p class="squatch-lead">
-          Give a friend a free month of Service and receive a free month of Service credit when they pay their first bill. Share the link below or use code <b>{{user.referralCode}}</b>
+          Give a friend a free month of Service and receive a free month<br>
+          of Service credit when they pay their first bill.
+        </p>
+
+        <p class="squatch-cta">
+          Share the link below or use code <b>{{user.referralCode}}</b>
         </p>
 
         <div class="squatch-share">
           <div class="form-group">
             <div class="input-group">
-              <div class="form-control" id="squatch-share-link">{{shareLinks.shareLink}}</div>
+              <input class="form-control" id="squatch-share-link" value="{{shareLinks.shareLink}}" readonly="readonly">
 
               <span class="label label-default fade" id="squatch-share-notification">Copied!</span>
 
               <span class="input-group-btn">
-                <button class="btn btn-default icon-btn" data-clipboard-target="squatch-share-link" data-clipboard-notification="#squatch-share-notification"><i class="icon icon-link"></i> Copy</button>
+                <button class="btn btn-primary icon-btn" data-clipboard-target="squatch-share-link" data-clipboard-notification="#squatch-share-notification"><i class="icon icon-link"></i> Copy</button>
               </span>
             </div>
           </div>
 
           <div class="row">
             <div class="col-xs-4">
-              <a class="btn btn-email btn-block icon-btn emailShare"><i class="icon icon-mail-1"></i> Email</a>
+              <a class="btn btn-email btn-block icon-btn emailShare"><i class="icon icon-mail"></i> Email</a>
             </div>
             <div class="col-xs-4">
               <a class="btn btn-facebook btn-block icon-btn fbShare"><i class="icon icon-facebook"></i> Share</a>
@@ -84,7 +89,7 @@
         </div>
       </div>
 
-      <footer class="squatch-stats" id="squatch-stats-panel">
+      <div class="squatch-stats" id="squatch-stats-panel">
         <div class="squatch-stats-body">
           <div class="squatch-stats-summary">
             <h2 class="squatch-stats-title">
@@ -93,20 +98,18 @@
 
             <div class="row squatch-rewards">
               <div class="col-xs-4 text-center">
-                <div class="squatch-rewards-total-credit">$0</div>
-                <span class="squatch-rewards-description">Total Credit Earned</span>
+                <div class="squatch-rewards-total-credit">$29.95</div>
+                <span class="squatch-rewards-description">Regular Price</span>
               </div>
 
               <div class="col-xs-4 text-center">
-                <div class="squatch-rewards-credit-available">
-                  $0
-                </div>
-                <span class="squatch-rewards-description">Credit Available</span>
+                <div class="squatch-rewards-credit-available">{{rewardBalances.[0].count}} Months</div>
+                <span class="squatch-rewards-description">Free Service</span>
               </div>
 
               <div class="col-xs-4 text-center">
                 <div class="squatch-rewards-referred">{{referralsLength}}</div>
-                <span class="squatch-rewards-description">Friends referred</span>
+                <span class="squatch-rewards-description">Friends Referred</span>
               </div>
             </div>
           </div>
@@ -132,9 +135,43 @@
                       <div class="squatch-referrals-description" data-moment="true">{{dateReferred}}</div>
                     </td>
                     <td>
-                      <i class="icon squatch-referrals-icon {{#if paid}}icon-ok-sign text-green{{else}}icon-exclamation-sign text-yellow{{/if}}"></i>
-                      <div class="squatch-referrals-heading">{{#if paid}}1 Month{{else}}Pending{{/if}}</div>
-                      <div class="squatch-referrals-description {{#if paid}}text-green{{else}}text-yellow{{/if}}">Credit</div>
+                      <i class="icon squatch-referrals-icon
+                        {{#if paid}}
+                          {{#if referrerReward.credit}}
+                            icon-ok-circled text-green
+                          {{else}}
+                            icon-ok-circled text-gray
+                          {{/if}}
+                        {{else}}
+                          icon-attention text-yellow
+                        {{/if}}
+                      "></i>
+
+                      <div class="squatch-referrals-heading">
+                        {{#if paid}}
+                          1 Month
+                        {{else}}
+                          Trial Signup
+                        {{/if}}
+                      </div>
+
+                      <div class="squatch-referrals-description
+                        {{#if paid}}
+                          {{#if referrerReward.credit}}
+                            text-green
+                          {{else}}
+                            text-gray
+                          {{/if}}
+                        {{else}}
+                          text-yellow
+                        {{/if}}
+                      ">
+                        {{#if paid}}
+                          Free Time {{#unless referrerReward.credit}}Used{{/unless}}
+                        {{else}}
+                          1 Month Pending
+                        {{/if}}
+                      </div>
                     </td>
                   </tr>
                 {{/each}}
@@ -143,23 +180,23 @@
           </div>
 
           <div class="squatch-stats-body-actions">
-            <button class="btn btn-rounded btn-secondary disabled" data-scroll-element="#squatch-referrals-scroll" data-scroll-increment="-3">Previous</button>
+            <button class="btn btn-default disabled" data-scroll-element="#squatch-referrals-scroll" data-scroll-increment="-3">Previous</button>
 
-            <button class="btn btn-rounded btn-secondary" data-close-panel="#squatch-stats-panel">Hide Referrals</button>
+            <button class="btn btn-default" data-close-panel="#squatch-stats-panel">Hide Referrals</button>
 
-            <button class="btn btn-rounded btn-secondary disabled" data-scroll-element="#squatch-referrals-scroll" data-scroll-increment="3">View More</button>
+            <button class="btn btn-default disabled" data-scroll-element="#squatch-referrals-scroll" data-scroll-increment="3">View More</button>
           </div>
 
           <div class="squatch-attribution text-center">
             Powered By Referral Saasquatch
           </div>
         </div>
-      </footer>
+      </div>
 
       <div class="squatch-actions">
-        <button class="btn btn-rounded btn-secondary squatch-actions-btn {{#unless referrals}}disabled{{/unless}}" data-open-panel="#squatch-stats-panel">
+        <button class="btn btn-default squatch-actions-btn {{#unless referrals}}disabled{{/unless}}" data-open-panel="#squatch-stats-panel">
           {{#if referrals}}
-            View Referrals
+            Show Referrals
           {{else}}
             No Referrals Yet...
           {{/if}}

@@ -227,9 +227,9 @@
   "rewardBalances": [
     {
       "type": "TIME_CREDIT",
-      "count": 1,
-      "totalAssignedCredit": 1,
-      "totalRedeemedCredit" : 0,
+      "count": 3,
+      "totalAssignedCredit": 3,
+      "totalRedeemedCredit": 1,
       "unit": "freemonth"
     }
   ],

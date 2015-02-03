@@ -58,7 +58,7 @@ html.lt-ie9 .fade {
 }
 
 .squatch-body {
-  padding: 23px @body-padding 26px;
+  padding: @body-padding;
   position: relative;
 }
 
@@ -68,28 +68,41 @@ html.lt-ie9 .fade {
   color: @blue;
 }
 
-.squatch-lead {
-  margin: 0 0 24px;
-  font-size: 13px;
-  text-align: center;
-}
+.squatch-header-close {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  background: transparent;
+  border: 0;
+  color: @blue;
+  font-size: @font-size-sm;
 
-.squatch-share {
-  margin-bottom: @body-padding;
-
-  .icon-btn {
-    width: 143px;
+  &:hover {
+    text-decoration: underline;
   }
 }
 
+.squatch-lead,
+.squatch-cta {
+  text-align: center;
+}
+
+.squatch-cta {
+  color: @gray-darker;
+  margin: 0 0 24px;
+}
+
 #squatch-share-link {
-  color: @blue;
+  color: @text-color;
+  background: transparent;
+  cursor: text;
+  position: relative;
 }
 
 #squatch-share-notification {
   position: absolute;
   top: 10px;
-  right: 165px;
+  right: 156px;
   z-index: 100;
 }
 
@@ -103,14 +116,14 @@ html.lt-ie9 .fade {
 
   .squatch-stats-body {
     padding: 15px @body-padding;
-    border-top: 1px solid @gray-lightest;
+    border-top: 1px solid @gray-lighter;
   }
 
   .squatch-stats-title {
-    margin: 0 0 10px;
+    margin: 6px 0 11px;
     text-align: center;
-    text-transform: uppercase;
-    color: @gray-light;
+    color: @gray-darker;
+    font-weight: bold;
 
     html.lt-ie9 & {
       margin: 0 0 7px;
@@ -123,7 +136,7 @@ html.lt-ie9 .fade {
 
     .btn {
       margin-left: @grid-gutter-width;
-      width: 140px;
+      width: 120px;
 
       &:first-child {
         margin-left: 0;
@@ -132,10 +145,10 @@ html.lt-ie9 .fade {
   }
 
   &.open {
-    .translate(0, -237px);
+    .translate(0, -207px);
 
     html.lt-ie9 & {
-      top: -237px;
+      top: -207px;
     }
   }
 }
@@ -152,34 +165,17 @@ html.lt-ie9 .fade {
     margin-top: 20px;
     margin-bottom: 8px;
     color: @gray-light;
+    font-weight: 300;
   }
 
   .squatch-rewards-credit-available {
     color: @green;
-    margin-top: 14px;
   }
 
   .squatch-rewards-description {
     text-transform: uppercase;
-    font-size: 10px;
-    font-weight: bold;
-    color: @gray-lighter;
-  }
-
-  .squatch-rewards-list-group {
-    font-size: @font-size-lg;
-    line-height: 34px;
+    font-size: @font-size-sm;
     color: @gray-light;
-  }
-
-  .squatch-rewards-list-value {
-    font-size: 24px;
-    padding: 0 18px 0 7px;
-    vertical-align: middle;
-  }
-
-  .squatch-rewards-list-description {
-    vertical-align: middle;
   }
 }
 
@@ -194,7 +190,6 @@ html.lt-ie9 .fade {
   background: @white;
   text-align: center;
   padding: 15px @body-padding 0;
-  border-top: 1px solid @gray-lightest;
 
   html.lt-ie9 & {
     display: block;
@@ -215,17 +210,13 @@ html.lt-ie9 .fade {
 
 .squatch-attribution {
   text-align: center;
-  margin: 14px 0 4px;
+  margin: 10px 0;
   font-size: 9px;
   color: lighten(@gray-light, 8%);
 }
 
-.squatch-referrals-head-container {
-  margin: 0 -@body-padding;
-}
-
 .squatch-referrals-container {
-  margin: 15px -@body-padding 12px;
+  margin: 15px 0;
   height: 209px;
   overflow: hidden;
 
@@ -234,7 +225,6 @@ html.lt-ie9 .fade {
   }
 }
 
-.squatch-referrals-head,
 .squatch-referrals {
   width: 100%;
 
@@ -244,12 +234,12 @@ html.lt-ie9 .fade {
     width: 89px;
 
     &:first-child {
-      width: 200px;
+      width: 160px;
       padding-left: @body-padding;
     }
 
     &:last-child {
-      width: 120px;
+      width: 130px;
       padding-right: @body-padding;
     }
   }
@@ -269,7 +259,7 @@ html.lt-ie9 .fade {
 
     tr {
       td {
-        border-bottom: 1px solid @gray-lightest;
+        border-bottom: 1px solid @gray-lighter;
       }
 
       &:last-child td,
@@ -326,10 +316,6 @@ html.lt-ie9 .fade {
   }
 }
 
-.btn-secondary {
-  .button-variant(@btn-secondary-color; @btn-secondary-bg; @btn-secondary-border);
-}
-
 .btn-email {
   .button-variant(@btn-email-color; @btn-email-bg; @btn-email-border);
 }
@@ -343,14 +329,12 @@ html.lt-ie9 .fade {
 }
 
 .btn[data-clipboard-target] {
-  &.hover {
-    background: darken(@btn-default-bg, 10%);
-    border-color: darken(@btn-default-border, 12%);
-  }
-}
+  width: 143px;
 
-.label {
-  border-radius: 8px;
+  &.hover {
+    background: darken(@btn-primary-bg, 10%);
+    border-color: darken(@btn-primary-border, 12%);
+  }
 }
 
 // Components
