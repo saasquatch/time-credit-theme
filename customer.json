@@ -226,9 +226,9 @@
   },
   "rewardBalances": [
     {
-      "count": 2,
-      "totalAssignedCredit": 2,
-      "totalRedeemedCredit": 0,
+      "count": 3,
+      "totalAssignedCredit": 3,
+      "totalRedeemedCredit": 1,
       "unit": "MONTH",
       "type": "CREDIT"
     }
