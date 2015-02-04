@@ -23,12 +23,12 @@ function extend(target) {
 }
 
 gulp.task('html', function() {
-  gulp.src('index.html')
+  return gulp.src('*.html')
     .pipe(connect.reload());
 });
 
 gulp.task('less', function() {
-  gulp.src('assets/css/widget.less')
+  return gulp.src('assets/css/widget.less')
     .pipe(
       less()
     ).on('error', gutil.log)
@@ -37,7 +37,7 @@ gulp.task('less', function() {
 });
 
 gulp.task('js', function() {
-  gulp.src('assets/javascript/*.js')
+  return gulp.src('assets/javascript/*.js')
     .pipe(connect.reload());
 });
 
@@ -153,22 +153,20 @@ gulp.task('hbs', function() {
     batch: ['templates']
   };
 
-  gulp.src('templates/widget.hbs')
+  return gulp.src('templates/widget.hbs')
     .pipe(handlebars(templateData, options))
     .pipe(rename('index.html'))
     .pipe(gulp.dest(''));
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', ['hbs', 'less'], function() {
   gulp.watch('assets/css/*.less', ['less']);
   gulp.watch('*.html', ['html']);
   gulp.watch('assets/javascript/*.js', ['js']);
   gulp.watch(['*.json', 'templates/*.hbs'], ['hbs']);
-  gulp.src('index.html')
-    .pipe(open('', { url: 'http://0.0.0.0:8080' }));
 });
 
-gulp.task('connect', function() {
+gulp.task('connect', ['hbs', 'less'], function() {
   connect.server({
     root: __dirname,
     livereload: true,
@@ -176,4 +174,9 @@ gulp.task('connect', function() {
   });
 });
 
-gulp.task('serve', ['less', 'hbs', 'connect', 'watch']);
+gulp.task('open', ['hbs', 'less'], function() {
+  gulp.src('*.html')
+    .pipe(open('', { url: 'http://0.0.0.0:8080' }));
+});
+
+gulp.task('serve', ['connect', 'watch', 'open']);
