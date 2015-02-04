@@ -23,9 +23,9 @@
       "dateReferred": 1407879101207,
       "paid": true,
       "referrerReward": {
-        "type": "TIME_CREDIT",
-        "unit": "freemonth",
-        "credit": 4500
+        "value": 1,
+        "unit": "MONTH",
+        "name": "MONTH"
       }
     },
     {
@@ -41,9 +41,9 @@
       "dateReferred": 1407886303019,
       "paid": true,
       "referrerReward": {
-        "type": "TIME_CREDIT",
-        "unit": "freemonth",
-        "credit": 4500
+        "value": 1,
+        "unit": "MONTH",
+        "name": "MONTH"
       }
     },
     {
@@ -59,9 +59,9 @@
       "dateReferred": 1407886756659,
       "paid": true,
       "referrerReward": {
-        "type": "TIME_CREDIT",
-        "unit": "freemonth",
-        "credit": 0
+        "value": 0,
+        "unit": "MONTH",
+        "name": "MONTH"
       }
     },
     {
@@ -145,7 +145,7 @@
         "lastName": "Mason"
       },
       "dateReferred": 1407879101207,
-      "paid": true,
+      "paid": false,
       "referrerReward": null
     },
     {
@@ -226,11 +226,11 @@
   },
   "rewardBalances": [
     {
-      "type": "TIME_CREDIT",
-      "count": 3,
-      "totalAssignedCredit": 3,
-      "totalRedeemedCredit": 1,
-      "unit": "freemonth"
+      "count": 2,
+      "totalAssignedCredit": 2,
+      "totalRedeemedCredit": 0,
+      "unit": "MONTH",
+      "type": "CREDIT"
     }
   ],
   "isSecureUrl": false,
