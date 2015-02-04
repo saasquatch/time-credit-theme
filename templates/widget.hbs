@@ -100,7 +100,16 @@
             </div>
 
             <div class="col-xs-4 text-center">
-              <div class="squatch-rewards-credit-available">{{rewardBalances.[0].count}} Months</div>
+              <div class="squatch-rewards-credit-available">
+                {{#if rewardBalances.[0].count}}
+                  {{rewardBalances.[0].count}}
+                {{else}}
+                  0
+                {{/if}}
+
+                Months
+              </div>
+
               <span class="squatch-rewards-description">Free Service</span>
             </div>
 
