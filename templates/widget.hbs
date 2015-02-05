@@ -155,11 +155,7 @@
                     <td>
                       <i class="icon squatch-referrals-icon
                         {{#if paid}}
-                          {{#if referrerReward.value}}
-                            icon-ok-circled text-green
-                          {{else}}
-                            icon-ok-circled text-gray
-                          {{/if}}
+                          icon-ok-circled text-green
                         {{else}}
                           icon-attention text-yellow
                         {{/if}}
@@ -175,17 +171,13 @@
 
                       <div class="squatch-referrals-description
                         {{#if paid}}
-                          {{#if referrerReward.value}}
-                            text-green
-                          {{else}}
-                            text-gray
-                          {{/if}}
+                          text-green
                         {{else}}
                           text-yellow
                         {{/if}}
                       ">
                         {{#if paid}}
-                          Free Time {{#unless referrerReward.value}}Used{{/unless}}
+                          Free Time
                         {{else}}
                           1 Month Pending
                         {{/if}}
