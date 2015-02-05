@@ -1,6 +1,10 @@
 {
   "name": "squatch-time-credit-theme",
   "description": "A generic time credit theme for Referral Saasquatch",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/saasquatch/time-credit-theme.git"
+  },
   "version": "1.0.0",
   "main": "templates/widget.hbs",
   "dependencies": {},
