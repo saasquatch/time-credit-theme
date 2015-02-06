@@ -47,7 +47,7 @@
 
     <main class="squatch-container">
       <div class="squatch-body">
-        <h1 class="squatch-title">Give {{programDetails.referredRewardDetails.credit}} Month{{#if (math programDetails.referredRewardDetails.credit '> 1')}}s{{/if}} and Get {{programDetails.referredRewardDetails.credit}} Months!</h1>
+        <h1 class="squatch-title">Give {{math programDetails.referredRewardDetails.credit '> 1'}} {{programDetails.referredRewardDetails.credit}} Month{{#if (math programDetails.referredRewardDetails.credit '> 1')}}s{{/if}} and Get {{programDetails.referredRewardDetails.credit}} Months!</h1>
 
         <button class="close squatch-header-close">Close</button>
 
