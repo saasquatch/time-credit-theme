@@ -47,12 +47,36 @@
 
     <main class="squatch-container">
       <div class="squatch-body">
-        <h1 class="squatch-title">Give {{programDetails.referredRewardDetails.credit}} Month<span class="show-{{math programDetails.referredRewardDetails.credit '> 1'}}">s</span> and Get {{programDetails.referredRewardDetails.credit}} Months!</h1>
+        <h1 class="squatch-title">
+          Give
+          {{programDetails.referredRewardDetails.credit}}
+          Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>
+
+          and Get
+          {{programDetails.referredRewardDetails.credit}}
+          Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>!
+        </h1>
 
         <button class="close squatch-header-close">Close</button>
 
         <p class="squatch-lead">
-          Give a friend a free month of Service and receive a free month<br>
+          Give a friend
+
+          <span class="hidden-{{math programDetails.referredRewardDetails.credit '> 1'}}">a</span>
+          <span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">{{programDetails.referredRewardDetails.credit}}</span>
+
+          free
+
+          month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>
+          of Service and receive
+          <span class="hidden-{{math programDetails.referredRewardDetails.credit '> 1'}}">a</span>
+          <span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">{{programDetails.referredRewardDetails.credit}}</span>
+
+          free
+
+          month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>
+
+          <br>
           of Service credit when they pay their first bill.
         </p>
 
