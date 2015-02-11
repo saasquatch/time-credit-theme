@@ -95,8 +95,18 @@
 
           <div class="row squatch-rewards">
             <div class="col-xs-4 text-center">
-              <div class="squatch-rewards-total-credit">$29.95</div>
-              <span class="squatch-rewards-description">Regular Price</span>
+              <div class="squatch-rewards-total-credit">
+                {{#if rewardBalances.[0].totalRedeemedCredit}}
+                  {{rewardBalances.[0].totalRedeemedCredit}}
+                {{else}}
+                  0
+                {{/if}}
+              </div>
+              <span class="squatch-rewards-description">
+                Free
+                Month<span class="hidden-{{math rewardBalances.[0].totalRedeemedCredit '== 1'}}">s</span>
+                Used
+              </span>
             </div>
 
             <div class="col-xs-4 text-center">
@@ -106,11 +116,13 @@
                 {{else}}
                   0
                 {{/if}}
-
-                Months
               </div>
 
-              <span class="squatch-rewards-description">Free Service</span>
+              <span class="squatch-rewards-description">
+                Free
+                Month<span class="hidden-{{math rewardBalances.[0].count '== 1'}}">s</span>
+                Active
+              </span>
             </div>
 
             <div class="col-xs-4 text-center">
