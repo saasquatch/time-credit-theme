@@ -128,7 +128,7 @@
               </div>
               <span class="squatch-rewards-description">
                 Free
-                Month<span class="hidden-{{math rewardBalances.[0].totalRedeemedCredit '== 1'}}">s</span>
+                Month{{#if rewardBalances.[0].totalRedeemedCredit}}<span class="hidden-{{math rewardBalances.[0].totalRedeemedCredit '== 1'}}">s</span>{{else}}s{{/if}}
                 Used
               </span>
             </div>
@@ -144,7 +144,7 @@
 
               <span class="squatch-rewards-description">
                 Free
-                Month<span class="hidden-{{math rewardBalances.[0].count '== 1'}}">s</span>
+                Month{{#if rewardBalances.[0].totalRedeemedCredit}}<span class="hidden-{{math rewardBalances.[0].count '== 1'}}">s</span>{{else}}s{{/if}}
                 Active
               </span>
             </div>
