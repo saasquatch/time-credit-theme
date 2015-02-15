@@ -22,7 +22,8 @@ $(document).ready(function() {
   };
 
   var resetScroll = function(element) {
-    element.scrollTop = 0;
+    element[0].scrollTop = 0;
+    element.data('scroll-offset', 0);
   };
 
   $('[data-clipboard-target]').each(function() {
@@ -58,7 +59,7 @@ $(document).ready(function() {
     setVisibility($this, nextOffset, limit);
 
     // Force IE to forget previous scroll top value
-    resetScroll(element[0]);
+    resetScroll(element);
 
     $this.on('click', function() {
       offset    = element.data('scroll-offset');
@@ -108,7 +109,7 @@ $(document).ready(function() {
 
     $this.on('click', function() {
       $this.one('panel:closed', function() {
-        resetScroll(element[0]);
+        resetScroll(element);
       });
     });
   });
