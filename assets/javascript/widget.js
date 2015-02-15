@@ -21,6 +21,10 @@ $(document).ready(function() {
     });
   };
 
+  var resetScroll = function(element) {
+    element.scrollTop = 0;
+  };
+
   $('[data-clipboard-target]').each(function() {
     var zeroClipboard;
 
@@ -37,7 +41,6 @@ $(document).ready(function() {
           notification.removeClass('in');
           $(this).dequeue();
         });
-
       });
     });
   });
@@ -55,7 +58,7 @@ $(document).ready(function() {
     setVisibility($this, nextOffset, limit);
 
     // Force IE to forget previous scroll top value
-    element[0].scrollTop = 0;
+    resetScroll(element[0]);
 
     $this.on('click', function() {
       offset    = element.data('scroll-offset');
@@ -90,7 +93,23 @@ $(document).ready(function() {
     element = $($this.data('close-panel'));
 
     $this.on('click', function() {
-      element.removeClass('open');
+      element
+        .one('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function() {
+          $this.trigger('panel:closed');
+        }).removeClass('open');
+    });
+  });
+
+  $('[data-scroll-reset]').each(function() {
+    var $this, element;
+
+    $this   = $(this);
+    element = $($this.data('scroll-reset'));
+
+    $this.on('click', function() {
+      $this.one('panel:closed', function() {
+        resetScroll(element[0]);
+      });
     });
   });
 
