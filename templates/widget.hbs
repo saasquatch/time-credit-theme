@@ -154,10 +154,47 @@
             </div>
           </div>
 
-          <div class="squatch-referrals-container" id="squatch-referrals-scroll" data-scroll-offset="0" data-scroll-limit="{{referralsLength}}">
+          <div class="squatch-referrals-container" id="squatch-referrals-scroll" data-scroll-offset="0" data-scroll-limit="{{#if referredBy.dateReferred}}{{math referralsLength '+ 1'}}{{else}}{{math referralsLength}}{{/if}}">
             <table class="squatch-referrals">
+              {{#if referredBy.referredByUser}}
+                <tr id="0">
+                  <td>
+                    {{#if referredBy.referredByUser.imageUrl}}
+                      <img class="img-circle squatch-referrals-avatar" src="{{referredBy.referredByUser.imageUrl}}">
+                    {{else}}
+                      <img class="img-circle squatch-referrals-avatar" src="{{gravatar referredBy.referredByUser.email default="mm" rating="pg" size=40}}">
+                    {{/if}}
+
+                    <div class="squatch-referrals-heading">{{referredBy.referredByUser.firstName}}</div>
+
+                    <div class="squatch-referrals-description">
+                      Referring User
+                    </div>
+                  </td>
+                  <td>
+                    <div class="squatch-referrals-heading">
+                      Referred You
+                    </div>
+
+                    <div class="squatch-referrals-description" data-moment="true">{{referredBy.dateReferred}}</div>
+                  </td>
+                  <td>
+                    <i class="icon squatch-referrals-icon icon-ok-circled text-green"></i>
+
+                    <div class="squatch-referrals-heading">
+                      {{programDetails.referredRewardDetails.credit}}
+                      Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>
+                    </div>
+
+                    <div class="squatch-referrals-description text-green">
+                      Free Time
+                    </div>
+                  </td>
+                </tr>
+              {{/if}}
+
               {{#each referrals}}
-                <tr id="{{@index}}">
+                <tr id="{{#if ../referredBy.dateReferred}}{{math @index '+ 1'}}{{else}}{{math @index}}{{/if}}">
                   <td>
                     {{#if referredUser.imageUrl}}
                       <img class="img-circle squatch-referrals-avatar" src="{{referredUser.imageUrl}}">
@@ -227,7 +264,7 @@
           <div class="squatch-stats-body-actions">
             <button class="btn btn-default disabled" data-scroll-element="#squatch-referrals-scroll" data-scroll-increment="-3">Previous</button>
 
-            <button class="btn btn-default" data-close-panel="#squatch-stats-panel" data-scroll-reset="#squatch-referrals-scroll">Hide Referrals</button>
+            <button class="btn btn-default" data-close-panel="#squatch-stats-panel" data-scroll-reset="#squatch-referrals-scroll">Hide Details</button>
 
             <button class="btn btn-default disabled" data-scroll-element="#squatch-referrals-scroll" data-scroll-increment="3">View More</button>
           </div>
@@ -239,11 +276,21 @@
       </div>
 
       <div class="squatch-actions">
-        <button class="btn btn-default {{#unless referrals}}disabled{{/unless}}" data-open-panel="#squatch-stats-panel">
+        <button data-open-panel="#squatch-stats-panel" class="btn btn-default
+          {{#unless referrals}}
+            {{#unless referredBy.dateReferred}}
+              disabled
+            {{/unless}}
+          {{/unless}}
+        ">
           {{#if referrals}}
-            Show Referrals
+            Show Details
           {{else}}
-            No Referrals Yet...
+            {{#if referredBy.dateReferred}}
+              Show Details
+            {{else}}
+              No Referrals Yet...
+            {{/if}}
           {{/if}}
         </button>
         <div class="squatch-attribution">
