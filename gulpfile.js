@@ -132,7 +132,7 @@ gulp.task('hbs', function() {
       stringFormat: function (string) {
         return string;
       },
-      strlower: function (string) {
+      lower: function (string) {
         return string.toLowerCase();
       },
       times: function(n, block) {
