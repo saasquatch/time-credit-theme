@@ -158,104 +158,20 @@
             <table class="squatch-referrals">
               {{#if referredBy.referredByUser}}
                 <tr id="0">
-                  <td>
-                    {{#if referredBy.referredByUser.imageUrl}}
-                      <img class="img-circle squatch-referrals-avatar" src="{{referredBy.referredByUser.imageUrl}}">
-                    {{else}}
-                      <img class="img-circle squatch-referrals-avatar" src="{{gravatar referredBy.referredByUser.email default="mm" rating="pg" size=40}}">
-                    {{/if}}
-
-                    <div class="squatch-referrals-heading">{{referredBy.referredByUser.firstName}}</div>
-
-                    <div class="squatch-referrals-description">
-                      Referring User
-                    </div>
-                  </td>
-                  <td>
-                    <div class="squatch-referrals-heading">
-                      Referred You
-                    </div>
-
-                    <div class="squatch-referrals-description" data-moment="true">{{referredBy.dateReferred}}</div>
-                  </td>
-                  <td>
-                    <i class="icon squatch-referrals-icon icon-ok-circled text-green"></i>
-
-                    <div class="squatch-referrals-heading">
-                      {{programDetails.referredRewardDetails.credit}}
-                      Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>
-                    </div>
-
-                    <div class="squatch-referrals-description text-green">
-                      Free Time
-                    </div>
-                  </td>
+                  {{>referral
+                    referral=referredBy.referredByUser
+                    description="Referring User"
+                    heading="Referred You"
+                    paid=1
+                    dateReferred=referredBy.dateReferred}}
                 </tr>
               {{/if}}
 
               {{#each referrals}}
                 <tr id="{{#if ../referredBy.dateReferred}}{{math @index '+ 1'}}{{else}}{{math @index}}{{/if}}">
-                  <td>
-                    {{#if referredUser.imageUrl}}
-                      <img class="img-circle squatch-referrals-avatar" src="{{referredUser.imageUrl}}">
-                    {{else}}
-                      <img class="img-circle squatch-referrals-avatar" src="{{gravatar referredUser.email default="mm" rating="pg" size=40}}">
-                    {{/if}}
-
-                    <div class="squatch-referrals-heading">{{referredUser.firstName}}</div>
-
-                    <div class="squatch-referrals-description">
-                      {{#if paid}}
-                        Paid User
-                      {{else}}
-                        Trial User
-                      {{/if}}
-                    </div>
-                  </td>
-                  <td>
-                    <div class="squatch-referrals-heading">
-                      {{#if paid}}
-                        Signed Up
-                      {{else}}
-                        Referred
-                      {{/if}}
-                    </div>
-
-                    <div class="squatch-referrals-description" data-moment="true">{{dateReferred}}</div>
-                  </td>
-                  <td>
-                    <i class="icon squatch-referrals-icon
-                      {{#if paid}}
-                        icon-ok-circled text-green
-                      {{else}}
-                        icon-attention text-yellow
-                      {{/if}}
-                    "></i>
-
-                    <div class="squatch-referrals-heading">
-                      {{#if paid}}
-                        {{../../programDetails.referredRewardDetails.credit}}
-                        Month<span class="hidden-{{math ../../programDetails.referredRewardDetails.credit '== 1'}}">s</span>
-                      {{else}}
-                        Trial Signup
-                      {{/if}}
-                    </div>
-
-                    <div class="squatch-referrals-description
-                      {{#if paid}}
-                        text-green
-                      {{else}}
-                        text-yellow
-                      {{/if}}
-                    ">
-                      {{#if paid}}
-                        Free Time
-                      {{else}}
-                        {{../../programDetails.referredRewardDetails.credit}}
-                        Month<span class="hidden-{{math ../../programDetails.referredRewardDetails.credit '== 1'}}">s</span> Pending
-                      {{/if}}
-                    </div>
-                  </td>
+                  {{>referral
+                    referral=referredUser
+                    programDetails=../programDetails}}
                 </tr>
               {{/each}}
             </table>
