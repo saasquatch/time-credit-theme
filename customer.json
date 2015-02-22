@@ -9,6 +9,18 @@
     "firstName": "Logan",
     "lastName": "Volkers"
   },
+  "referredBy": {
+    "referredByUser": {
+      "id": "5cukkyfnuhbyjdwxywhcs47u_778239",
+      "accountId": "5cukkyfnuhbyjdwxywhcs47u",
+      "referralCode": "KARLHORKY",
+      "email": "karl@example.com",
+      "imageUrl": "http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?d=blank",
+      "firstName": "Karl",
+      "lastName": "Horky"
+    },
+    "dateReferred": 1404121071158
+  },
   "referrals": [
     {
       "referredUser": {
@@ -59,7 +71,7 @@
       "dateReferred": 1407886756659,
       "paid": true,
       "referrerReward": {
-        "value": 0,
+        "value": 1,
         "unit": "MONTH",
         "name": "MONTH"
       }
@@ -226,8 +238,8 @@
   },
   "rewardBalances": [
     {
-      "count": 3,
-      "totalAssignedCredit": 3,
+      "count": 4,
+      "totalAssignedCredit": 4,
       "totalRedeemedCredit": 1,
       "unit": "MONTH",
       "type": "CREDIT"
