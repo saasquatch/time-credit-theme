@@ -164,9 +164,7 @@
 
               {{#each referrals}}
                 <tr id="{{#if ../referredBy.dateReferred}}{{math @index '+ 1'}}{{else}}{{math @index}}{{/if}}">
-                  {{> referral
-                    referral=referredUser
-                    programDetails=../programDetails}}
+                  {{> referral}}
                 </tr>
               {{/each}}
             </table>
