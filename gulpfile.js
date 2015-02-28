@@ -55,7 +55,7 @@ gulp.task('hbs', function() {
       assets: function (filepath) {
         return '/assets/' + filepath;
       },
-      block: function (options) {
+      block: function (name, options) {
         var context = extend(this, options.hash);
         return options.fn(context);
       },
