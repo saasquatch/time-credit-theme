@@ -158,20 +158,24 @@
             <table class="squatch-referrals">
               {{#if referredBy.referredByUser}}
                 <tr id="0">
-                  {{> referral
+                  {{#block
                     referral=referredBy.referredByUser
                     description="Referring User"
                     heading="Referred You"
                     paid=1
                     dateReferred=referredBy.dateReferred}}
+                    {{> referral}}
+                  {{/block}}
                 </tr>
               {{/if}}
 
               {{#each referrals}}
                 <tr id="{{#if ../referredBy.dateReferred}}{{math @index '+ 1'}}{{else}}{{math @index}}{{/if}}">
-                  {{> referral
+                  {{#block
                     referral=referredUser
                     programDetails=../programDetails}}
+                    {{> referral}}
+                  {{/block}}
                 </tr>
               {{/each}}
             </table>
