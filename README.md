@@ -1,7 +1,7 @@
 Time Credit Theme
 =================
 
-A generic time credit theme for Referral Saasquatch
+A generic time credit theme for Referral SaaSquatch.
 
 Setup
 -----
@@ -15,10 +15,10 @@ $ npm install -g saasquatch-cli
 $ squatch serve
 ```
 
-Mock Customer Data
-------------------
+Template Context
+----------------
 
-Example mock customer data can be found in `customer.json`.
+The saasquatch-cli server will compile your handlebars theme with the referral data in `customer.json` as the template context.
 
 License
 -------
