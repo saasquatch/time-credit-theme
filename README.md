@@ -3,17 +3,16 @@ Time Credit Theme
 
 A generic time credit theme for Referral Saasquatch
 
-
 Setup
 -----
 
 To get started, clone the project, install [saasquatch-cli](https://github.com/saasquatch/saasquatch-cli) and start the server. You will need node.js.
 
 ```
-git clone git@github.com:saasquatch/time-credit-theme.git
-cd time-credit-theme
-npm install -g saasquatch-cli
-squatch serve
+$ git clone git@github.com:saasquatch/time-credit-theme.git
+$ cd time-credit-theme
+$ npm install -g saasquatch-cli
+$ squatch serve
 ```
 
 Mock Customer Data
