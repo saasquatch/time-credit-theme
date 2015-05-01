@@ -18,7 +18,7 @@ $ squatch serve
 Template Context
 ----------------
 
-The saasquatch-cli server will compile your handlebars theme with the referral data in `customer.json` as the template context.
+The saasquatch-cli server will compile your Handlebars theme with the referral data in `customer.json` as the template context.
 
 License
 -------
