@@ -160,4 +160,53 @@
       $this.text(time.fromNow());
     });
   });
+
+  $(window).on('load', function() {
+    var containerEl = $('.squatch-container-popup');
+    if (!containerEl.length) { return; }
+
+    var
+      bodyEl,
+      bodyHeight,
+      bodyHeightWithoutTitle,
+      titleEl,
+      statsEl,
+      referralsEl,
+      statsHeight,
+      css,
+      stylesheet;
+
+    bodyEl      = $('.squatch-body');
+    titleEl     = bodyEl.find('.squatch-title');
+    statsEl     = $('.squatch-stats');
+    referralsEl = $('.squatch-referrals-container');
+
+    bodyHeight = bodyEl.outerHeight();
+    bodyHeightWithoutTitle = bodyHeight - titleEl.outerHeight(true) - titleEl.position().top;
+    statsHeight = statsEl.outerHeight() - referralsEl.outerHeight();
+
+    containerEl.css('height', bodyHeight + statsHeight);
+
+    stylesheet = document.createElement('style');
+    stylesheet.type = 'text/css';
+
+    css = '.squatch-stats.open {' +
+      '-webkit-transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
+      '-ms-transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
+      '-o-transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
+      'transform: translate(0, -' + bodyHeightWithoutTitle + 'px);' +
+      '}' +
+      'html.lt-ie9 .squatch-stats.open {' +
+      'top: -' + bodyHeightWithoutTitle + 'px;' +
+      '}';
+
+    if (stylesheet.styleSheet){
+      stylesheet.styleSheet.cssText = css;
+    } else {
+      // Safari
+      stylesheet.appendChild(document.createTextNode(css));
+    }
+
+    document.querySelector('head').appendChild(stylesheet);
+  });
 })();
