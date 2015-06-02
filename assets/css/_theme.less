@@ -353,13 +353,18 @@ button[data-scroll-element].disabled {
 
 // Empty referrals list
 [data-scroll-limit='0'] {
-  &,
-  & + .squatch-stats-body-actions {
+  & {
     display: none;
   }
 
+  // Leave these elements with a height for correct container height calculation with no referrals
+  & + .squatch-stats-body-actions,
   & ~ .squatch-attribution {
-    margin-top: 20px;
+    visibility: hidden;
+  }
+
+  & ~ .squatch-attribution {
+    margin-top: 30px;
   }
 }
 

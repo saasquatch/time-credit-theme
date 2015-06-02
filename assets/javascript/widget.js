@@ -183,7 +183,11 @@
 
     bodyHeight = bodyEl.outerHeight();
     bodyHeightWithoutTitle = bodyHeight - titleEl.outerHeight(true) - titleEl.position().top;
-    statsHeight = statsEl.outerHeight() - referralsEl.outerHeight();
+    statsHeight = statsEl.outerHeight();
+
+    if (referralsEl.is(':visible')) {
+      statsHeight -= referralsEl.outerHeight();
+    }
 
     containerEl.css('height', bodyHeight + statsHeight);
 
