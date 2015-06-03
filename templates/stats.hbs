@@ -1,0 +1,41 @@
+<h2 class="squatch-stats-title">
+  Referral Stats
+</h2>
+
+<div class="row squatch-rewards">
+  <div class="col-xs-4 text-center">
+    <div class="squatch-rewards-total-credit">
+      {{#if rewardBalances.[0].totalRedeemedCredit}}
+        {{rewardBalances.[0].totalRedeemedCredit}}
+      {{else}}
+        0
+      {{/if}}
+    </div>
+    <span class="squatch-rewards-description">
+      Free
+      Month{{#if rewardBalances.[0].totalRedeemedCredit}}<span class="hidden-{{math rewardBalances.[0].totalRedeemedCredit '== 1'}}">s</span>{{else}}s{{/if}}
+      Used
+    </span>
+  </div>
+
+  <div class="col-xs-4 text-center">
+    <div class="squatch-rewards-credit-available">
+      {{#if rewardBalances.[0].count}}
+        {{rewardBalances.[0].count}}
+      {{else}}
+        0
+      {{/if}}
+    </div>
+
+    <span class="squatch-rewards-description">
+      Free
+      Month{{#if rewardBalances.[0].totalRedeemedCredit}}<span class="hidden-{{math rewardBalances.[0].count '== 1'}}">s</span>{{else}}s{{/if}}
+      Active
+    </span>
+  </div>
+
+  <div class="col-xs-4 text-center">
+    <div class="squatch-rewards-referred">{{referralsLength}}</div>
+    <span class="squatch-rewards-description">Friends Referred</span>
+  </div>
+</div>
