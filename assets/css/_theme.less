@@ -49,12 +49,16 @@ html.lt-ie9 .fade {
 // Base Referral SaaSquatch elements
 .squatch-container {
   padding: 0;
-  width: 500px;
+  width: @container-width;
   position: relative;
   overflow: hidden;
 
   html.lt-ie9 & {
     border: 1px solid @gray-lighter;
+  }
+
+  @media (max-width: @container-width) {
+    width: 100%;
   }
 }
 
