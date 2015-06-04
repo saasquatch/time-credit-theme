@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="{{assets 'css/widget.css'}}">
 
-    {{> jsHead}}
+    {{> (stringFormat 'programs/%s/theme_messages' programDetails.referredRewardDetails.rewardType) }}
     {{squatchHead}}
 
     <!--[if lt IE 9]>
@@ -47,18 +47,18 @@
 
     <main class="squatch-container squatch-container-{{lower mode}}">
       <div class="squatch-body">
-        {{> title}}
+        {{> (stringFormat 'programs/%s/title' programDetails.referredRewardDetails.rewardType)}}
 
         <button class="close squatch-header-close" data-close-panel="#squatch-stats-panel">Close</button>
 
-        {{> lead}}
+        {{> (stringFormat 'programs/%s/lead' programDetails.referredRewardDetails.rewardType)}}
         {{> cta}}
         {{> share}}
       </div>
 
       <div class="squatch-stats" id="squatch-stats-panel">
         <div class="squatch-stats-body">
-          {{> stats}}
+          {{> (stringFormat 'programs/%s/stats' programDetails.referredRewardDetails.rewardType)}}
           {{> referrals}}
           {{> referrals_actions}}
           {{> attribution}}

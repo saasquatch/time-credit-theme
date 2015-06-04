@@ -262,6 +262,7 @@
   "headerVersion": "1",
   "programDetails": {
     "referredRewardDetails": {
+      "rewardType": "TIME_CREDIT",
       "credit": 1
     }
   },
