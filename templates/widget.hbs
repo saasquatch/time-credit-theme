@@ -34,15 +34,7 @@
         {{> share}}
       </div>
 
-      <div class="squatch-stats" id="squatch-stats-panel">
-        <div class="squatch-stats-body">
-          {{> (stringFormat 'programs/%s/stats' programDetails.referredRewardDetails.rewardType)}}
-          {{> referrals}}
-          {{> referrals_actions}}
-          {{> attribution}}
-        </div>
-      </div>
-
+      {{> stats}}
       {{> actions}}
     </main>
 
