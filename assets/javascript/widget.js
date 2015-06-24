@@ -165,6 +165,7 @@
     var containerEl = $('.squatch-container-popup');
     if (!containerEl.length) { return; }
 
+    // TODO: Refactor this to make simpler
     var
       bodyEl,
       bodyHeight,
