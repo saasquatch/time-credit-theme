@@ -93,3 +93,18 @@
     }
   }
 }
+
+// Empty referrals list
+[data-scroll-limit='0'] {
+  display: none;
+
+  // Leave these elements with a height for correct container height calculation with no referrals
+  & + .squatch-stats-body-actions,
+  & ~ .squatch-attribution {
+    visibility: hidden;
+  }
+
+  & ~ .squatch-attribution {
+    margin-top: 30px;
+  }
+}
