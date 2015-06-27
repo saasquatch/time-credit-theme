@@ -31,7 +31,7 @@
         {{!-- {{> (stringFormat 'programs/%s/title' programDetails.referredRewardDetails.rewardType) }} --}}
         {{> programs/TIME_CREDIT/title}}
 
-        <button class="close squatch-header-close" data-close-panel="#squatch-stats-panel">Close</button>
+        <button class="close squatch-header-close" data-close-panel="#squatch-panel">Close</button>
 
         {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
         {{!-- {{> (stringFormat 'programs/%s/lead' programDetails.referredRewardDetails.rewardType) }} --}}
@@ -40,7 +40,15 @@
         {{> share}}
       </div>
 
-      {{> stats}}
+      <div id="squatch-panel">
+        {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
+        {{!-- {{> (stringFormat 'programs/%s/stats_summary' programDetails.referredRewardDetails.rewardType) }} --}}
+        {{> programs/TIME_CREDIT/stats}}
+        {{> referrals}}
+        {{> referrals_actions}}
+        {{> attribution}}
+      </div>
+
       {{> actions}}
     </main>
 

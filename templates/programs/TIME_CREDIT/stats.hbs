@@ -1,10 +1,10 @@
-<h2 class="squatch-stats-title">
+<h2 class="squatch-panel-title">
   Referral Stats
 </h2>
 
-<div class="squatch-stats-summary">
-  <div class="squatch-stats-summary-item">
-    <div class="squatch-stats-summary-title">
+<div class="squatch-stats">
+  <div class="squatch-stats-item">
+    <div class="squatch-stats-title">
       {{#if rewardBalances.[0].totalRedeemedCredit}}
         {{rewardBalances.[0].totalRedeemedCredit}}
       {{else}}
@@ -12,15 +12,15 @@
       {{/if}}
     </div>
 
-    <span class="squatch-stats-summary-description">
+    <span class="squatch-stats-description">
       Free
       Month{{#if rewardBalances.[0].totalRedeemedCredit}}<span class="hidden-{{math rewardBalances.[0].totalRedeemedCredit '== 1'}}">s</span>{{else}}s{{/if}}
       Used
     </span>
   </div>
 
-  <div class="squatch-stats-summary-item">
-    <div class="squatch-stats-summary-title text-green">
+  <div class="squatch-stats-item">
+    <div class="squatch-stats-title text-green">
       {{#if rewardBalances.[0].count}}
         {{rewardBalances.[0].count}}
       {{else}}
@@ -28,16 +28,16 @@
       {{/if}}
     </div>
 
-    <span class="squatch-stats-summary-description">
+    <span class="squatch-stats-description">
       Free
       Month{{#if rewardBalances.[0].totalRedeemedCredit}}<span class="hidden-{{math rewardBalances.[0].count '== 1'}}">s</span>{{else}}s{{/if}}
       Active
     </span>
   </div>
 
-  <div class="squatch-stats-summary-item">
-    <div class="squatch-stats-summary-title">{{referralsLength}}</div>
+  <div class="squatch-stats-item">
+    <div class="squatch-stats-title">{{referralsLength}}</div>
 
-    <span class="squatch-stats-summary-description">Friends Referred</span>
+    <span class="squatch-stats-description">Friends Referred</span>
   </div>
 </div>
