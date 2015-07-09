@@ -227,5 +227,12 @@
     // The content has a different height in mobile
     var mql = window.matchMedia('(max-width: 500px)');
     mql.addListener(setContainerHeightForPopup);
+
+    // Disable responsive view on popup temporarily.
+    // This is due to the popup being displayed inconsistently - with responsive styles activated, sometimes the mobile view will be displayed, even on a desktop monitor with more than 500 pixels width. The solution may be to set the iframe width to the full browser width, rather than the width of the widget theme.
+    // TODO: Find a solution for this and enable responsive styles again.
+    $(document).ready(function() {
+      $('.squatch-container').css('width', '500px');
+    });
   }
 })();
