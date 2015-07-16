@@ -231,8 +231,7 @@
       var setContainerHeightIfWideEnough = function () {
         var width = windowEl.width();
 
-        // We are testing for greater than 500 here currently because of a bug in the width calculation code https://github.com/yupiq/saasquatch/issues/407
-        if (width >= 500) {
+        if (width === 500) {
           setContainerHeightForPopup();
         } else {
           setTimeout(function() {
