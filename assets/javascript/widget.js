@@ -237,7 +237,7 @@
         } else {
           setTimeout(function() {
             setContainerHeightIfWideEnough();
-          }, 100);
+          }, 50);
         }
       };
 
