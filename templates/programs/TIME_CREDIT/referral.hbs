@@ -21,21 +21,29 @@
     </span>
 
     <span class="hidden-md
-      {{#if paid}}
-        text-green
+      {{#if cancelled}}
+        text-red
       {{else}}
-        text-yellow
+        {{#if paid}}
+          text-green
+        {{else}}
+          text-yellow
+        {{/if}}
       {{/if}}
     ">
-      {{#if paid}}
-        {{programDetails.referredRewardDetails.credit}}
-
-        Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>
-
-        Free Time
+      {{#if cancelled}}
+        Reward Removed
       {{else}}
-        {{programDetails.referredRewardDetails.credit}}
-        Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span> Pending
+        {{#if paid}}
+          {{programDetails.referredRewardDetails.credit}}
+
+          Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>
+
+          Free Time
+        {{else}}
+          {{programDetails.referredRewardDetails.credit}}
+          Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span> Pending
+        {{/if}}
       {{/if}}
     </span>
   </div>
@@ -59,10 +67,14 @@
 
 <td>
   <i class="icon squatch-referrals-icon
-    {{#if paid}}
-      icon-ok-circled text-green
+    {{#if cancelled}}
+      icon-cancel-circled text-red
     {{else}}
-      icon-attention text-yellow
+      {{#if paid}}
+        icon-ok-circled text-green
+      {{else}}
+        icon-attention text-yellow
+      {{/if}}
     {{/if}}
   "></i>
 
@@ -76,17 +88,25 @@
   </div>
 
   <div class="squatch-referrals-description hidden-sm
-    {{#if paid}}
-      text-green
+    {{#if cancelled}}
+      text-red
     {{else}}
-      text-yellow
+      {{#if paid}}
+        text-green
+      {{else}}
+        text-yellow
+      {{/if}}
     {{/if}}
   ">
-    {{#if paid}}
-      Free Time
+    {{#if cancelled}}
+      Reward Removed
     {{else}}
-      {{programDetails.referredRewardDetails.credit}}
-      Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span> Pending
+      {{#if paid}}
+        Free Time
+      {{else}}
+        {{programDetails.referredRewardDetails.credit}}
+        Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span> Pending
+      {{/if}}
     {{/if}}
   </div>
 </td>
