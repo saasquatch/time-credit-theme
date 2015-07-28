@@ -79,11 +79,15 @@
   "></i>
 
   <div class="squatch-referrals-heading hidden-sm">
-    {{#if paid}}
-      {{programDetails.referredRewardDetails.credit}}
-      Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>
+    {{#if cancelled}}
+      Referral Reward
     {{else}}
-      Trial Signup
+      {{#if paid}}
+        {{programDetails.referredRewardDetails.credit}}
+        Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>
+      {{else}}
+        Trial Signup
+      {{/if}}
     {{/if}}
   </div>
 
@@ -99,7 +103,7 @@
     {{/if}}
   ">
     {{#if cancelled}}
-      Reward Removed
+      Removed
     {{else}}
       {{#if paid}}
         Free Time
