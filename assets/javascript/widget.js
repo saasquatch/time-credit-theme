@@ -231,6 +231,7 @@
     windowEl.on('load', function () {
       var setContainerHeightIfWideEnough = function () {
         var width = windowEl.width();
+          setContainerHeightForPopup();
 
         if (width === 500) {
           setContainerHeightForPopup();
