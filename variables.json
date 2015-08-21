@@ -38,72 +38,7 @@
         }
       },
       "required": ["emailShareBody", "emailShareSubject", "facebookShareSubject", "facebookShareBody", "twitterShareBody"]
-    },
-    "widgetCustomization": {
-      "title": "Customize Referral Widget",
-      "type": "object",
-      "properties": {
-        "widgetFont": {
-          "type": "string",
-          "title": "Widget Font:",
-          "default": "\"Helvetica Neue\",Helvetica,Arial,sans-serif",
-          "enum": [
-            "\"Helvetica Neue\",Helvetica,Arial,sans-serif",
-            "'Lato',sans-serif",
-            "'Times New Roman'",
-            "Arial",
-            "Courier",
-            "Tahoma",
-            "Verdana"
-          ],
-          "options": {
-            "enum_titles": [
-              "Helvetica Neue",
-              "Lato",
-              "Times New Roman",
-              "Arial",
-              "Courier",
-              "Tahoma",
-              "Verdana"
-            ]
-          }
-        },
-        "headerColor": {
-          "type": "string",
-          "format": "text",
-          "minLength": 1,
-          "title" : "Heading Text Color (hex code):",
-          "default" : "#4486E1",
-          "options": {
-            "validate": ["hex-color"]
-          }
-        },
-        "heading": {
-          "type": "string",
-          "minLength": 1,
-          "format": "textarea",
-          "title": "Heading Text:",
-          "default" : "Give {{programDetails.referredRewardDetails.credit}} Month(s) and Get {{programDetails.referredRewardDetails.credit}} Month(s)!
-",
-          "options": {
-            "input_height": "100px",
-            "validate": ["handlebars"]
-          }
-        },
-        "headerDetails": {
-          "type": "string",
-          "minLength": 1,
-          "format": "textarea",
-          "title": "Body Text:",
-          "default" : "Give a friend {{programDetails.referredRewardDetails.credit}} free month(s) of {{companyName}} and receive {{programDetails.referredRewardDetails.credit}} free month(s) of {{companyName}} credit when they pay their first bill.",
-          "options": {
-            "input_height": "100px",
-            "validate": ["handlebars"]
-          }
-        }
-      }
     }
   },
-  "required": ["shareMessaging", "widgetCustomization"]
+  "required": ["shareMessaging"]
 }
- 
