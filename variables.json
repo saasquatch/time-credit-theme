@@ -83,7 +83,7 @@
           "minLength": 1,
           "format": "textarea",
           "title": "Heading Text:",
-          "default" : "Give {{programDetails.referredRewardDetails.credit}} Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span> and Get {{programDetails.referredRewardDetails.credit}} Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>!",
+          "default" : "Give {{programDetails.referredRewardDetails.credit}} Month<span class=\"hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span> and Get {{programDetails.referredRewardDetails.credit}} Month<span class=\"hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>!",
           "options": {
             "input_height": "100px",
             "validate": ["handlebars"]
@@ -94,7 +94,7 @@
           "minLength": 1,
           "format": "textarea",
           "title": "Body Text:",
-          "default" : "Give a friend <span class="hidden-{{math programDetails.referredRewardDetails.credit '> 1'}}">a</span> <span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">{{programDetails.referredRewardDetails.credit}}</span> free month <span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>
+          "default" : "Give a friend <span class=\"hidden-{{math programDetails.referredRewardDetails.credit '> 1'}}">a</span> <span class=\"hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">{{programDetails.referredRewardDetails.credit}}</span> free month <span class=\"hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>
   of {{companyName}} and receive
   <span class="hidden-{{math programDetails.referredRewardDetails.credit '> 1'}}">a</span>
   <span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">{{programDetails.referredRewardDetails.credit}}</span>
