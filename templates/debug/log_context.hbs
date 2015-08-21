@@ -1,7 +1,7 @@
 <script type="text/javascript">
    (function(){
-       {{#if context}}
-          var plaintext = "{{context}}";
+       {{#if debug-context}}
+          var plaintext = "{{debug-context}}";
        {{else}}
           var plaintext = "{{this}}";
        {{/if}}
@@ -9,9 +9,9 @@
            var pre = document.createElement("pre");
            pre.innerHTML = plaintext;
            var context = JSON.parse(pre.innerText);
-           console.log("Current context", context);
+           console.log("Current context {{debug-details}}", context);
        }catch(e){
-           console.log("Current context (non-obj)", plaintext);
+           console.log("Current context (non-obj) {{debug-details}}", plaintext);
        }
    })();
 </script>

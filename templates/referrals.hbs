@@ -23,7 +23,7 @@
           {{!-- {{> (stringFormat 'programs/%s/referral' programDetails.referredRewardDetails.rewardType)}} --}}
           {{> programs/TIME_CREDIT/referral}}
           
-          {{> debug/log_context context=heading}}
+          {{> debug/log_context debug-context=heading debug-details="ReferredBy block"}}
         {{/block}}
       </tr>
     {{/if}}
@@ -38,7 +38,8 @@
           {{!-- TODO: Switch the second line below out with the line directly below when we've updated to Handlebars.java 2.2.0 --}}
           {{!-- {{> (stringFormat 'programs/%s/referral' programDetails.referredRewardDetails.rewardType) }} --}}
           {{> programs/TIME_CREDIT/referral}}
-          {{> debug/log_context context=heading}}
+
+          {{> debug/log_context debug-context=heading debug-details="Referrals block"}}
 
         {{/block}}
       </tr>
