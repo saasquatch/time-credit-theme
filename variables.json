@@ -83,7 +83,7 @@
           "minLength": 1,
           "format": "textarea",
           "title": "Heading Text:",
-          "default" : "Give {{programDetails.referredRewardDetails.credit}} Month(s) and Get {{programDetails.referredRewardDetails.credit}} Month(s)!",
+          "default" : "Give {{programDetails.referredRewardDetails.credit}} Month and Get {{programDetails.referredRewardDetails.credit}} Month!",
           "options": {
             "input_height": "100px",
             "validate": ["handlebars"]
@@ -94,7 +94,7 @@
           "minLength": 1,
           "format": "textarea",
           "title": "Body Text:",
-          "default" : "Give a friend {{programDetails.referredRewardDetails.credit}} free month(s) of {{companyName}} and receive {{programDetails.referredRewardDetails.credit}} free month(s) of {{companyName}} credit when they pay their first bill.",
+          "default" : "Give a friend {{programDetails.referredRewardDetails.credit}} free month of {{companyName}} and receive {{programDetails.referredRewardDetails.credit}} free month of {{companyName}} credit when they pay their first bill.",
           "options": {
             "input_height": "100px",
             "validate": ["handlebars"]
