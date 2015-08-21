@@ -1,7 +1,9 @@
 <script type="text/javascript">
    (function(){
        var plaintext = "{{this}}";
-       var context = JSON.parse(plaintext);
+       var pre = document.createElement("pre");
+       pre.innerHTML = plaintext;
+       var context = JSON.parse(pre.innerText);
        console.log("Current context", context);
    })();
 </script>
