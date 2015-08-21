@@ -1,6 +1,10 @@
 <script type="text/javascript">
    (function(){
-       var plaintext = "{{this}}";
+       {{#if context}}
+          var plaintext = "{{context}}";
+       {{else}}
+          var plaintext = "{{this}}";
+       {{/if}}
        var pre = document.createElement("pre");
        pre.innerHTML = plaintext;
        var context = JSON.parse(pre.innerText);

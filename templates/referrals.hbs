@@ -23,7 +23,7 @@
           {{!-- {{> (stringFormat 'programs/%s/referral' programDetails.referredRewardDetails.rewardType)}} --}}
           {{> programs/TIME_CREDIT/referral}}
           
-          {{> debug/log_context}}
+          {{> debug/log_context context=heading}}
         {{/block}}
       </tr>
     {{/if}}
