@@ -5,9 +5,13 @@
        {{else}}
           var plaintext = "{{this}}";
        {{/if}}
-       var pre = document.createElement("pre");
-       pre.innerHTML = plaintext;
-       var context = JSON.parse(pre.innerText);
-       console.log("Current context", context);
+       try{
+           var pre = document.createElement("pre");
+           pre.innerHTML = plaintext;
+           var context = JSON.parse(pre.innerText);
+           console.log("Current context", context);
+       }catch(e){
+           console.log("Current context (non-obj)", plaintext);
+       }
    })();
 </script>
