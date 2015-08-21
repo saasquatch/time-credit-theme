@@ -38,7 +38,79 @@
         }
       },
       "required": ["emailShareBody", "emailShareSubject", "facebookShareSubject", "facebookShareBody", "twitterShareBody"]
+    },
+    "widgetCustomization": {
+      "title": "Customize Referral Widget",
+      "type": "object",
+      "properties": {
+        "widgetFont": {
+          "type": "string",
+          "title": "Widget Font:",
+          "default": "\"Helvetica Neue\",Helvetica,Arial,sans-serif",
+          "enum": [
+            "\"Helvetica Neue\",Helvetica,Arial,sans-serif",
+            "'Lato',sans-serif",
+            "'Times New Roman'",
+            "Arial",
+            "Courier",
+            "Tahoma",
+            "Verdana"
+          ],
+          "options": {
+            "enum_titles": [
+              "Helvetica Neue",
+              "Lato",
+              "Times New Roman",
+              "Arial",
+              "Courier",
+              "Tahoma",
+              "Verdana"
+            ]
+          }
+        },
+        "headerColor": {
+          "type": "string",
+          "format": "text",
+          "minLength": 1,
+          "title" : "Heading Text Color (hex code):",
+          "default" : "#4486E1",
+          "options": {
+            "validate": ["hex-color"]
+          }
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "format": "textarea",
+          "title": "Heading Text:",
+          "default" : "Give {{programDetails.referredRewardDetails.credit}} Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span> and Get {{programDetails.referredRewardDetails.credit}} Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>!",
+          "options": {
+            "input_height": "100px",
+            "validate": ["handlebars"]
+          }
+        },
+        "headerDetails": {
+          "type": "string",
+          "minLength": 1,
+          "format": "textarea",
+          "title": "Body Text:",
+          "default" : "Give a friend <span class="hidden-{{math programDetails.referredRewardDetails.credit '> 1'}}">a</span> <span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">{{programDetails.referredRewardDetails.credit}}</span> free month <span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>
+  of {{companyName}} and receive
+  <span class="hidden-{{math programDetails.referredRewardDetails.credit '> 1'}}">a</span>
+  <span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">{{programDetails.referredRewardDetails.credit}}</span>
+
+  free
+
+  month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>
+
+  of {{companyName}} credit when they pay their first bill.",
+          "options": {
+            "input_height": "100px",
+            "validate": ["handlebars"]
+          }
+        }
+      }
     }
   },
-  "required": ["shareMessaging"]
+  "required": ["shareMessaging", "widgetCustomization"]
 }
