@@ -1,8 +1,7 @@
-<script type="text/x-context">{{this}}</script>
 <script type="text/javascript">
    (function(){
-       var plaintextNode = document.currentScript.previousSibling;
-       var context = JSON.parse(plaintextNode.innerText);
+       var plaintext = "{{{this}}}";
+       var context = JSON.parse(plaintext);
        console.log("Current context", context);
    })();
 </script>
