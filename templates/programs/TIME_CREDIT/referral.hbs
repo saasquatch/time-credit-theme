@@ -13,9 +13,9 @@
         {{description}}
       {{else}}
         {{#if paid}}
-          Paid User
+          {{i18n "paidUser" bundle="i18n/messages"}}
         {{else}}
-          Trial User
+          {{i18n "trialUser" bundle="i18n/messages"}}
         {{/if}}
       {{/if}}
     </span>
@@ -30,12 +30,12 @@
       {{#if paid}}
         {{programDetails.referredRewardDetails.credit}}
 
-        Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>
+        {{i18n "month" bundle="i18n/messages"}}
 
-        Free Time
+        {{i18n "discountEarned" bundle="i18n/messages"}}
       {{else}}
         {{programDetails.referredRewardDetails.credit}}
-        Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span> Pending
+        {{i18n "discountPending" bundle="i18n/messages"}}
       {{/if}}
     </span>
   </div>
@@ -47,9 +47,9 @@
       {{heading}}
     {{else}}
       {{#if paid}}
-        Signed Up
+        {{i18n "signedUp" bundle="i18n/messages"}}
       {{else}}
-        Referred
+        {{i18n "referred" bundle="i18n/messages"}}
       {{/if}}
     {{/if}}
   </div>
@@ -69,9 +69,9 @@
   <div class="squatch-referrals-heading hidden-sm">
     {{#if paid}}
       {{programDetails.referredRewardDetails.credit}}
-      Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>
+      {{i18n "month" bundle="i18n/messages"}}
     {{else}}
-      Trial Signup
+      {{i18n "trialSignup" bundle="i18n/messages"}}
     {{/if}}
   </div>
 
@@ -83,10 +83,10 @@
     {{/if}}
   ">
     {{#if paid}}
-      Free Time
+      {{i18n "discountEarned" bundle="i18n/messages"}}
     {{else}}
       {{programDetails.referredRewardDetails.credit}}
-      Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span> Pending
+      {{i18n "discountPending" bundle="i18n/messages"}}
     {{/if}}
   </div>
 </td>
