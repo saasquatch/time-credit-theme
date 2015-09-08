@@ -1,5 +1,5 @@
 <h2 class="squatch-panel-title">
-  Referral Stats
+  {{i18n "referralDiscountStatus" bundle="i18n/messages"}}
 </h2>
 
 <div class="squatch-stats">
@@ -13,9 +13,7 @@
     </div>
 
     <span class="squatch-stats-description">
-      Free
-      Month{{#if rewardBalances.[0].totalRedeemedCredit}}<span class="hidden-{{math rewardBalances.[0].totalRedeemedCredit '== 1'}}">s</span>{{else}}s{{/if}}
-      Used
+      {{i18n "monthsUsed" bundle="i18n/messages"}}
     </span>
   </div>
 
@@ -29,15 +27,13 @@
     </div>
 
     <span class="squatch-stats-description">
-      Free
-      Month{{#if rewardBalances.[0].totalRedeemedCredit}}<span class="hidden-{{math rewardBalances.[0].count '== 1'}}">s</span>{{else}}s{{/if}}
-      Active
+      {{i18n "monthsActve" bundle="i18n/messages"}}
     </span>
   </div>
 
   <div class="squatch-stats-item">
     <div class="squatch-stats-title">{{referralsLength}}</div>
 
-    <span class="squatch-stats-description">Friends Referred</span>
+    <span class="squatch-stats-description">{{i18n "friendsReferred" bundle="i18n/messages"}}</span>
   </div>
 </div>
