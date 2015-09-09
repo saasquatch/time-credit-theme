@@ -16,9 +16,9 @@
     sharelink: '{{shareLinks.shareLink}}',
     email: {
       share : {
-        subject: '{{urlencode (i18n "emailShareSubject"   bundle="i18n/messages") space="%20"}}',
-        body: '{{urlencode (i18n "emailShareBody"  bundle="i18n/messages") space="%20"}}',
-        mailToLink: 'mailto:?subject={{urlencode (i18n "emailShareSubject" bundle="i18n/messages") space="%20"}}&body={{urlencode (i18n "emailShareBody" bundle="i18n/messages") space="%20"}}',
+        subject: '{{urlencode (i18n "emailShareSubject" programDetails.referredRewardDetails.credit companyName bundle="i18n/messages") space="%20"}}',
+        body: '{{urlencode (i18n "emailShareBody" companyName programDetails.referredRewardDetails.credit user.referralCode bundle="i18n/messages") space="%20"}}',
+        mailToLink: 'mailto:?subject={{urlencode (i18n "emailShareSubject" programDetails.referredRewardDetails.credit companyName bundle="i18n/messages") space="%20"}}&body={{urlencode (i18n "emailShareBody" companyName programDetails.referredRewardDetails.credit user.referralCode bundle="i18n/messages") space="%20"}}',
       },
       reminder : {
         subject: '',
@@ -28,15 +28,15 @@
       type: 'UNKNOWN'
     },
     facebook: {
-      title: '{{urlencode (i18n "fbTitle" bundle="i18n/messages") }}',
-      summary: '{{urlencode (i18n "fbSummary" bundle="i18n/messages") }}',
+      title: '{{urlencode (i18n "fbTitle" programDetails.referredRewardDetails.credit companyName bundle="i18n/messages") }}',
+      summary: '{{urlencode (i18n "fbSummary" companyName programDetails.referredRewardDetails.credit shareLinks.facebookShareLink bundle="i18n/messages") }}',
       link: '{{shareLinks.facebookShareLink}}',
       shareImage: '{{assets "images/log-me-in.jpg"}}',
       appId: '157382547792399',
       redirectUrl: 'http://app.referralsaasquatch.com/widget/close'
     },
     twitter: {
-      message: '{{urlencode (i18n "twitterMsg" bundle="i18n/messages") }}'
+      message: '{{urlencode (i18n "twitterMsg" companyName programDetails.referredRewardDetails.credit shareLinks.twitterShareLink bundle="i18n/messages") }}'
     },
     mobile: {
       sharelink : '{{shareLinks.shareLink}}',
