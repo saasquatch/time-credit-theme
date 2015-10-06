@@ -102,6 +102,19 @@
             "validate": ["handlebars"]
           }
         }
+        "shareCodeDetails": {
+         "type": "string",
+         "minLength": 1,
+         "format": "textarea",
+         "title": "Share Code Text",
+         "default": "Share the link below or use the code {{user.referralCode}}",
+         "options": {
+           "input_height": "100px",
+           "validate": ["handlebars"]
+         }
+
+Eric Mason [14:49]
+}
       }
     }
   },
