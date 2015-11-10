@@ -196,7 +196,7 @@
 	              "properties" : {
 	                "headerImageUrl" : { "default" : "{{assets 'images/email/referral-started-header.png'}}" },
 	                "headerContent" : { "default" : "##Good News!\nYour friend has signed up for a free account with {{companyName}}!" },
-	                "bodyContent" : { "default" : "{{convertedReferral.referredUser.firstName}} is currently trying out {{companyName}}. As a thank you from us, if they become a paying user, you will automatically receive {{programDetails.referredRewardDetails.credit}} free month of free time with {{companyName}}" }
+	                "bodyContent" : { "default" : "{{newReferral.referredUser.firstName}} is currently trying out {{companyName}}. As a thank you from us, if they become a paying user, you will automatically receive {{programDetails.referredRewardDetails.credit}} free month of free time with {{companyName}}" }
 	              }
 	            },
 	            { "$ref" : "#/definitions/email/definitions/generalContent" },
