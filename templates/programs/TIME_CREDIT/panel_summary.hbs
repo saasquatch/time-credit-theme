@@ -14,7 +14,7 @@
 
     <span class="squatch-stats-description">
       Free
-      Month{{#if timeCreditRewardBalance.totalRedeemedCredit}}<span class="hidden-{{math rewardBalances.[0].totalRedeemedCredit '== 1'}}">s</span>{{else}}s{{/if}}
+      Month{{#if timeCreditRewardBalance.totalRedeemedCredit}}<span class="hidden-{{math timeCreditRewardBalance.totalRedeemedCredit '== 1'}}">s</span>{{else}}s{{/if}}
       Used
     </span>
   </div>
