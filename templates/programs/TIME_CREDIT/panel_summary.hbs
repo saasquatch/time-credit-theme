@@ -1,12 +1,12 @@
 <h2 class="squatch-panel-title">
-  Referral Stats
+  Rewards
 </h2>
 
 <div class="squatch-stats">
   <div class="squatch-stats-item">
     <div class="squatch-stats-title">
-      {{#if rewardBalances.[0].totalRedeemedCredit}}
-        {{rewardBalances.[0].totalRedeemedCredit}}
+      {{#if timeCreditRewardBalance.totalRedeemedCredit}}
+        {{timeCreditRewardBalance.totalRedeemedCredit}}
       {{else}}
         0
       {{/if}}
@@ -14,15 +14,15 @@
 
     <span class="squatch-stats-description">
       Free
-      Month{{#if rewardBalances.[0].totalRedeemedCredit}}<span class="hidden-{{math rewardBalances.[0].totalRedeemedCredit '== 1'}}">s</span>{{else}}s{{/if}}
+      Month{{#if timeCreditRewardBalance.totalRedeemedCredit}}<span class="hidden-{{math timeCreditRewardBalance.totalRedeemedCredit '== 1'}}">s</span>{{else}}s{{/if}}
       Used
     </span>
   </div>
 
   <div class="squatch-stats-item">
     <div class="squatch-stats-title text-green">
-      {{#if rewardBalances.[0].count}}
-        {{rewardBalances.[0].count}}
+      {{#if timeCreditRewardBalance.totalAssignedCredit}}
+        {{timeCreditRewardBalance.totalAssignedCredit}}
       {{else}}
         0
       {{/if}}
@@ -30,7 +30,8 @@
 
     <span class="squatch-stats-description">
       Free
-      Month{{#if rewardBalances.[0].totalRedeemedCredit}}<span class="hidden-{{math rewardBalances.[0].count '== 1'}}">s</span>{{else}}s{{/if}}
+      Month{{#if timeCreditRewardBalance.totalRedeemedCredit}}
+          <span class="hidden-{{math timeCreditRewardBalance.totalAssignedCredit '== 1'}}">s</span>{{else}}s{{/if}}
       Active
     </span>
   </div>
