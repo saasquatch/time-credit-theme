@@ -28,14 +28,25 @@
       {{/if}}
     ">
       {{#if paid}}
-        {{programDetails.referredRewardDetails.credit}}
-
-        Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>
+        {{#if referred}}
+          {{programDetails.referrerRewardDetails.credit}}
+  
+          Month<span class="hidden-{{math programDetails.referrerRewardDetails.credit '== 1'}}">s</span>
+        {{else}}
+          {{programDetails.referredRewardDetails.credit}}
+  
+          Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>        
+        {{/if}}
 
         Free Time
       {{else}}
-        {{programDetails.referredRewardDetails.credit}}
-        Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span> Pending
+        {{#if referred}}
+          {{programDetails.referrerRewardDetails.credit}}
+          Month<span class="hidden-{{math programDetails.referrerRewardDetails.credit '== 1'}}">s</span> Pending
+        {{else}}
+          {{programDetails.referredRewardDetails.credit}}
+          Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span> Pending        
+        {{/if}}
       {{/if}}
     </span>
   </div>
@@ -68,8 +79,13 @@
 
   <div class="squatch-referrals-heading hidden-sm">
     {{#if paid}}
-      {{programDetails.referredRewardDetails.credit}}
-      Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>
+      {{#if referred}}
+        {{programDetails.referrerRewardDetails.credit}}
+        Month<span class="hidden-{{math programDetails.referrerRewardDetails.credit '== 1'}}">s</span>
+      {{else}}
+        {{programDetails.referredRewardDetails.credit}}
+        Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>      
+      {{/if}}
     {{else}}
       Trial Signup
     {{/if}}
@@ -85,8 +101,13 @@
     {{#if paid}}
       Free Time
     {{else}}
-      {{programDetails.referredRewardDetails.credit}}
-      Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span> Pending
+      {{#if referred}}
+        {{programDetails.referrerRewardDetails.credit}}
+        Month<span class="hidden-{{math programDetails.referrerRewardDetails.credit '== 1'}}">s</span> Pending
+      {{else}}
+        {{programDetails.referredRewardDetails.credit}}
+        Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span> Pending
+      {{/if}}
     {{/if}}
   </div>
 </td>
