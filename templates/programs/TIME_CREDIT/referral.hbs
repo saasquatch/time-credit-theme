@@ -28,24 +28,35 @@
       {{/if}}
     ">
       {{#if paid}}
-        {{#if referred}}
-          {{programDetails.referrerRewardDetails.credit}}
-  
-          Month<span class="hidden-{{math programDetails.referrerRewardDetails.credit '== 1'}}">s</span>
+        {{#if reward.value}}
+            {{reward.value}}
+    
+            Month<span class="hidden-{{math reward.value '== 1'}}">s</span>        
         {{else}}
-          {{programDetails.referredRewardDetails.credit}}
-  
-          Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>        
+          {{#if referred}}
+            {{programDetails.referrerRewardDetails.credit}}
+    
+            Month<span class="hidden-{{math programDetails.referrerRewardDetails.credit '== 1'}}">s</span>
+          {{else}}
+            {{programDetails.referredRewardDetails.credit}}
+    
+            Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>        
+          {{/if}}
         {{/if}}
 
         Free Time
       {{else}}
-        {{#if referred}}
-          {{programDetails.referrerRewardDetails.credit}}
-          Month<span class="hidden-{{math programDetails.referrerRewardDetails.credit '== 1'}}">s</span> Pending
+        {{#if reward.value}}
+          {{reward.value}}
+          Month<span class="hidden-{{math reward.value '== 1'}}">s</span> Pending        
         {{else}}
-          {{programDetails.referredRewardDetails.credit}}
-          Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span> Pending        
+          {{#if referred}}
+            {{programDetails.referrerRewardDetails.credit}}
+            Month<span class="hidden-{{math programDetails.referrerRewardDetails.credit '== 1'}}">s</span> Pending
+          {{else}}
+            {{programDetails.referredRewardDetails.credit}}
+            Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span> Pending        
+          {{/if}}
         {{/if}}
       {{/if}}
     </span>
@@ -79,12 +90,17 @@
 
   <div class="squatch-referrals-heading hidden-sm">
     {{#if paid}}
-      {{#if referred}}
-        {{programDetails.referrerRewardDetails.credit}}
-        Month<span class="hidden-{{math programDetails.referrerRewardDetails.credit '== 1'}}">s</span>
+      {{#if reward.value}}
+        {{reward.value}}
+        Month<span class="hidden-{{math reward.value '== 1'}}">s</span>      
       {{else}}
-        {{programDetails.referredRewardDetails.credit}}
-        Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>      
+        {{#if referred}}
+          {{programDetails.referrerRewardDetails.credit}}
+          Month<span class="hidden-{{math programDetails.referrerRewardDetails.credit '== 1'}}">s</span>
+        {{else}}
+          {{programDetails.referredRewardDetails.credit}}
+          Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span>      
+        {{/if}}
       {{/if}}
     {{else}}
       Trial Signup
@@ -101,12 +117,17 @@
     {{#if paid}}
       Free Time
     {{else}}
-      {{#if referred}}
-        {{programDetails.referrerRewardDetails.credit}}
-        Month<span class="hidden-{{math programDetails.referrerRewardDetails.credit '== 1'}}">s</span> Pending
+      {{#if reward.value}}
+        {{reward.value}}
+        Month<span class="hidden-{{math reward.value '== 1'}}">s</span> Pending
       {{else}}
-        {{programDetails.referredRewardDetails.credit}}
-        Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span> Pending
+        {{#if referred}}
+          {{programDetails.referrerRewardDetails.credit}}
+          Month<span class="hidden-{{math programDetails.referrerRewardDetails.credit '== 1'}}">s</span> Pending
+        {{else}}
+          {{programDetails.referredRewardDetails.credit}}
+          Month<span class="hidden-{{math programDetails.referredRewardDetails.credit '== 1'}}">s</span> Pending
+        {{/if}}
       {{/if}}
     {{/if}}
   </div>
