@@ -71,6 +71,10 @@
       {{/if}}
     </main>
 
+  <div>
+    {{#with (variables-object 'widget.REFERRER_WIDGET.cta')}}content: {{content}}{{/with}}
+  </div>
+
     <div id="cta">
        {{> cta-widget cta=variables.widget.REFERRER_WIDGET.cta}}
     </div>
