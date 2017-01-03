@@ -16,9 +16,9 @@
     sharelink: '{{shareLinks.shareLink}}',
     email    : {
       share : {
-        subject: '',
-        body: '',
-        mailToLink: 'mailto:?subject=',
+        subject: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.shareMessaging.emailShareSubject') space="%20"}}',
+        body: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.shareMessaging.emailShareBody') space="%20"}}',
+        mailToLink: 'mailto:?subject={{urlencode (variables 'widget.REFERRER_WIDGET.content.shareMessaging.emailShareSubject') space="%20"}}&body={{urlencode (variables 'widget.REFERRER_WIDGET.content.shareMessaging.emailShareBody') space="%20"}}',
       },
       reminder: {
         subject: '{{urlencode (stringFormat "Get %s month(s) of free %s?" programDetails.referredRewardDetails.credit companyName) space="%20"}}',
@@ -28,11 +28,11 @@
       type: 'UNKNOWN'
     },
     facebook: {
-      title: '',
-      summary: '',
+      title: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.shareMessaging.facebookShareSubject')}}',
+      summary: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.shareMessaging.facebookShareBody')}}',
       link: '{{shareLinks.facebookShareLink}}',
 {{#if variables.widget.REFERRER_WIDGET.content.shareMessaging.facebookShareImageURL}}
-      shareImage: '',
+      shareImage: '{{urlencode (variables 'variables.widget.REFERRER_WIDGET.content.shareMessaging.facebookShareImageURL')}}',
 {{else}}
       shareImage: null,
 {{/if}}
@@ -40,13 +40,13 @@
       redirectUrl: 'http://app.referralsaasquatch.com/widget/close'
     },
     twitter: {
-      message: ''
+      message: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.shareMessaging.twitterShareBody')}}'
     },
     mobile: {
       sharelink : '{{shareLinks.shareLink}}',
       emailBody: '{{urlencode (stringFormat "Sign up for a %s account and we both get %s month(s) for free. Use this link %s" companyName programDetails.referredRewardDetails.credit shareLinks.mobileEmailShareLink)}}',
       facebookBody: '{{urlencode (stringFormat "Sign up for a %s account and we both get %s month(s) for free. Use this link %s" companyName programDetails.referredRewardDetails.credit shareLinks.mobileFacebookShareLink)}}',
-      twitterBody: '',
+      twitterBody: '{{urlencode (variables 'widget.REFERRER_WIDGET.content.shareMessaging.twitterShareBody') space="%20"}}',
       twitterShareLink : '{{shareLinks.mobileTwitterShareLink}}',
       facebookShareLink : '{{shareLinks.mobileFacebookShareLink}}',
       emailShareLink: '{{shareLinks.mobileEmailShareLink}}'
