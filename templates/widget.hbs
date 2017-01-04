@@ -70,13 +70,9 @@
         {{> form}}
       {{/if}}
     </main>
-
-  <div>
-    {{#with (variables-object 'widget.REFERRER_WIDGET.cta')}}content: {{content.buttonSide}}{{/with}}
-  </div>
-
+    
     <div id="cta">
-       {{> cta-widget cta=variables.widget.REFERRER_WIDGET.cta}}
+       {{> cta-widget cta=(variables-object 'widget.REFERRER_WIDGET.cta')}}
     </div>
 
     <script src="{{assets 'libs/ready.min.js'}}"></script>
