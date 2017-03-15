@@ -17,6 +17,7 @@
     {{!-- {{> (stringFormat 'programs/%s/theme_messages' programDetails.referredRewardDetails.rewardType) }} --}}
     {{> programs/TIME_CREDIT/theme_messages}}
     {{squatchHead}}
+    <script src="{{assets 'libs/mobile-detect.min.js'}}"></script>
     <script src="{{assets 'javascript/base.js'}}"></script>
     <script src="{{assets 'javascript/events.js'}}"></script>
 
@@ -70,7 +71,7 @@
         {{> form}}
       {{/if}}
     </main>
-    
+
     <div id="cta">
        {{> cta-widget cta=(variables-object 'widget.REFERRER_WIDGET.cta')}}
     </div>
