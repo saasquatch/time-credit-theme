@@ -470,13 +470,27 @@
                                "type":"string",
                                "description":"Email share subject",
                                "minLength":4,
-                               "default":"Get {{programDetails.referredRewardDetails.credit}} month(s) of free {{companyName}}"
+                               "format":"textarea",
+                               "default":"Get {{programDetails.referredRewardDetails.credit}} month(s) of free {{companyName}}",
+                               "options":{
+                                    "validate":[
+                                       "handlebars"
+                                    ],
+                                    "input_height":"100px"
+                                 }
                              },
                              "emailShareBody":{
                                 "type":"string",
                                 "description":"Email share body",
                                 "minLength":4,
-                                "default":"Sign up for a {{companyName}} account and we both get {{programDetails.referredRewardDetails.credit}} month(s) for free. Use this link {{share-link 'EMAIL'}} free credit. Use this link {{share-link 'EMAIL'}}"
+                                "format":"textarea",
+                                "default":"Sign up for a {{companyName}} account and we both get {{programDetails.referredRewardDetails.credit}} month(s) for free. Use this link {{share-link 'EMAIL'}} free credit. Use this link {{share-link 'EMAIL'}}",
+                                "options":{
+                                    "validate":[
+                                       "handlebars"
+                                    ],
+                                    "input_height":"100px"
+                                 }
                              },
                              "emailDisplayRule":{
                                 "type":"string",
@@ -512,13 +526,27 @@
                                 "type":"string",
                                 "description":"Facebook share subject",
                                 "minLength":4,
-                                "default":"Get {{programDetails.referredRewardDetails.credit}} month(s) of free {{companyName}}"
+                                "format":"textarea",
+                                "default":"Get {{programDetails.referredRewardDetails.credit}} month(s) of free {{companyName}}",
+                                "options":{
+                                    "validate":[
+                                       "handlebars"
+                                    ],
+                                    "input_height":"100px"
+                                 }
                              },
                              "facebookShareBody":{
                                 "type":"string",
-                                "description":"Facebook share subject",
+                                "description":"Facebook share body",
                                 "minLength":4,
-                                "default":"Sign up for a {{companyName}} account and we both get {{programDetails.referredRewardDetails.credit}} month(s) for free. Use this link {{share-link 'FACEBOOK'}}"
+                                "format":"textarea",
+                                "default":"Sign up for a {{companyName}} account and we both get {{programDetails.referredRewardDetails.credit}} month(s) for free. Use this link {{share-link 'FACEBOOK'}}",
+                                "options":{
+                                    "validate":[
+                                       "handlebars"
+                                    ],
+                                    "input_height":"100px"
+                                 }
                              },
                              "facebookDisplayRule":{
                                 "type":"string",
@@ -570,7 +598,14 @@
                                "type":"string",
                                "description":"Twitter share body",
                                "minLength":4,
-                               "default":"Sign up for a {{companyName}} account and we both get {{programDetails.referredRewardDetails.credit}} month(s) for free. Use this link {{share-link 'TWITTER'}}"
+                               "format":"textarea",
+                               "default":"Sign up for a {{companyName}} account and we both get {{programDetails.referredRewardDetails.credit}} month(s) for free. Use this link {{share-link 'TWITTER'}}",
+                               "options":{
+                                    "validate":[
+                                       "handlebars"
+                                    ],
+                                    "input_height":"100px"
+                                 }
                              },
                              "twitterDisplayRule":{
                                 "type":"string",
@@ -601,7 +636,14 @@
                                "type":"string",
                                "description":"SMS share body",
                                "minLength":4,
-                               "default":"Sign up for a {{companyName}} account and we both get {{programDetails.referredRewardDetails.credit}} month(s) for free. Use this link {{share-link 'SMS'}}"
+                               "format":"textarea",
+                               "default":"Sign up for a {{companyName}} account and we both get {{programDetails.referredRewardDetails.credit}} month(s) for free. Use this link {{share-link 'SMS'}}",
+                               "options":{
+                                    "validate":[
+                                       "handlebars"
+                                    ],
+                                    "input_height":"100px"
+                                 }
                              },
                              "smsDisplayRule":{
                                 "type":"string",
@@ -628,7 +670,14 @@
                                 "type":"string",
                                 "title":"WhatsApp share body",
                                 "minLength":4,
-                                "default":"Sign up for a {{companyName}} account and we both get {{programDetails.referredRewardDetails.credit}} month(s) for free. Use this link {{share-link 'WHATSAPP'}}"
+                                "format":"textarea",
+                                "default":"Sign up for a {{companyName}} account and we both get {{programDetails.referredRewardDetails.credit}} month(s) for free. Use this link {{share-link 'WHATSAPP'}}",
+                                "options":{
+                                    "validate":[
+                                       "handlebars"
+                                    ],
+                                    "input_height":"100px"
+                                 }
                              },
                              "whatsappDisplayRule":{
                                 "type":"string",
