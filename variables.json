@@ -468,7 +468,7 @@
                           "properties":{
                              "emailShareSubject":{
                                "type":"string",
-                               "description":"Email share subject",
+                               "title":"Email share subject",
                                "minLength":4,
                                "format":"textarea",
                                "default":"Get {{programDetails.referredRewardDetails.credit}} month(s) of free {{companyName}}",
@@ -481,7 +481,7 @@
                              },
                              "emailShareBody":{
                                 "type":"string",
-                                "description":"Email share body",
+                                "title":"Email share body",
                                 "minLength":4,
                                 "format":"textarea",
                                 "default":"Sign up for a {{companyName}} account and we both get {{programDetails.referredRewardDetails.credit}} month(s) for free. Use this link {{share-link 'EMAIL'}} free credit. Use this link {{share-link 'EMAIL'}}",
@@ -524,7 +524,7 @@
                              },
                              "facebookShareSubject":{
                                 "type":"string",
-                                "description":"Facebook share subject",
+                                "title":"Facebook share subject",
                                 "minLength":4,
                                 "format":"textarea",
                                 "default":"Get {{programDetails.referredRewardDetails.credit}} month(s) of free {{companyName}}",
@@ -537,7 +537,7 @@
                              },
                              "facebookShareBody":{
                                 "type":"string",
-                                "description":"Facebook share body",
+                                "title":"Facebook share body",
                                 "minLength":4,
                                 "format":"textarea",
                                 "default":"Sign up for a {{companyName}} account and we both get {{programDetails.referredRewardDetails.credit}} month(s) for free. Use this link {{share-link 'FACEBOOK'}}",
@@ -596,7 +596,7 @@
                           "properties":{
                              "twitterShareBody":{
                                "type":"string",
-                               "description":"Twitter share body",
+                               "title":"Twitter share body",
                                "minLength":4,
                                "format":"textarea",
                                "default":"Sign up for a {{companyName}} account and we both get {{programDetails.referredRewardDetails.credit}} month(s) for free. Use this link {{share-link 'TWITTER'}}",
@@ -634,7 +634,7 @@
                           "properties":{
                              "smsShareBody":{
                                "type":"string",
-                               "description":"SMS share body",
+                               "title":"SMS share body",
                                "minLength":4,
                                "format":"textarea",
                                "default":"Sign up for a {{companyName}} account and we both get {{programDetails.referredRewardDetails.credit}} month(s) for free. Use this link {{share-link 'SMS'}}",
